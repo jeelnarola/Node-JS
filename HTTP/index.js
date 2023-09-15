@@ -49,6 +49,16 @@ const server=http.createServer((req,res)=>{
             }
         })
     }
+    else if(req.url=="/user"){
+        fs.readFile("user.html",(err,data)=>{
+            try {
+                res.end(data)
+                
+            } catch (error) {
+                console.log(err);
+            }
+        })
+    }
    else if(!(req.url=="/cart"||req.url=="/sign"||req.url=="/login"||req.url=="/"||req.url=="/product")){
     res.end("404 error")
    }
