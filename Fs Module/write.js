@@ -1,14 +1,17 @@
 
 const fs =require('fs')
-// const { threadId } = require('worker_threads')
 
 let ore=process.argv[2]
 let filename=process.argv[3]
+// let renam=process.argv[4]
 let data=process.argv[4]
-let renam=process.argv[4]
-const write=()=>{fs.writeFileSync(filename,data,(err)=>{
-    if(err) throw err;
-    console.log("file create");
+const write=()=>{
+    fs.writeFile(filename,data,(err)=>{
+    if(err){
+        console.log(err);
+    }else{
+        console.log("creat file");
+    }
 })
 }
 
