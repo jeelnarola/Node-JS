@@ -1,9 +1,9 @@
-
+//  FS MODULE 
 const fs =require('fs')
 
 let ore=process.argv[2]
 let filename=process.argv[3]
-// let renam=process.argv[4]
+let renam=process.argv[4]
 let data=process.argv[4]
 const write=()=>{
     fs.writeFile(filename,data,(err)=>{

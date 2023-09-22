@@ -1,3 +1,4 @@
+    // EXPRESS JS GET,POST
 const express=require("express")
 const cors=require('cors')
 const app=express()
@@ -12,7 +13,10 @@ app.get('/login',(req,res)=>{
     res.send("Login Page !")
 })
 
-
+app.post("/sign",(req,res)=>{
+    console.log(req.body);
+    res.send(req.body)
+})
 app.post('/login', (req, res) => {
     // const { username, password } = req.body;
     res.status(200).json({ message: 'Login successful'});
@@ -23,12 +27,6 @@ app.post('/login', (req, res) => {
 //     }
   });
 
-
-app.post("/sign",(req,res)=>{
-    console.log(req.body);
-    res.send(req.body)
-})
-
 app.post("/product",(req,res)=>{
     console.log(req.body);
     res.status(200).send(req.body)
@@ -36,3 +34,7 @@ app.post("/product",(req,res)=>{
 
 
 app.listen(3000,()=>{console.log(`server satart`)})
+
+
+
+
