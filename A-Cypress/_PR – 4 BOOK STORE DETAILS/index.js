@@ -49,8 +49,6 @@ app.get(`/books/filter`,async(req,res)=>{
     let {author,category,title,sort}=req.query
     let titleRegex = new RegExp(title, 'i');
 
-    // let filter=await schema.find({$or:[,{category:category},{title:{$regex:titleRegex}}]})
-    // let filter=""
     if(author){
        const filter =await schema.find({author:author})
         res.send(filter)
@@ -71,26 +69,6 @@ app.get(`/books/filter`,async(req,res)=>{
     // res.send(filter)
 })
 
-app.get('/books/filter',async(req,res)=>{
-    const {author,category,sort} = req.query
-    if(sort == "lth"){
-        const filter = await schema.find().sort({price : 1})
-        res.send(filter)
-    }
-    else if(sort == 'htl'){
-        const filter = await schema.find().sort({price : -1})
-        res.send(filter)
-    }
-    else if(author){
-        const filter = await schema.find({author : author})
-        res.send(filter)
-    }
-    else if(category){
-        const filter = await schema.find({category : category})
-        res.send(filter)
-    }
-    
-})
 
 
 app.listen(port,()=>{
