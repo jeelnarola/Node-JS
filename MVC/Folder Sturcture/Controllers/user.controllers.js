@@ -8,5 +8,8 @@ const home2=async(req,res)=>{
     let get=await userschema.find()
     res.send(get)
 }
+const products=(req,res)=>{
+    res.render("index")
+}
 
-module.exports={home,home2}
+module.exports={home,home2,products}
