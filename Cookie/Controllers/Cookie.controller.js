@@ -1,5 +1,5 @@
 const userschema=require('../Models/Cookie.schema')
-
+const cookieparser=require("cookie-parser")
 const home=async(req,res)=>{
     const {email}=req.body
     let data=await userschema.findOne({email:email})
@@ -28,4 +28,12 @@ const signup=async(req,res)=>{
 const ui=(req,res)=>{
     res.render("index")
 }
-module.exports={home,signup,get,ui}
+
+const product=(req,res)=>{
+    res.send("Product Page")
+}
+
+// const del=(req,res)=>{
+//     res.Cookie("id",).send("dele")
+// }
+module.exports={home,signup,get,ui,product}

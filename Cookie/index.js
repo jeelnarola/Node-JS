@@ -14,7 +14,9 @@ app.use(cookieparser())
 app.use(router)
 
 app.get("/del",(req,res)=>{
-    res.clearCookie("id").send("dele")
+    res.cookie("id",{
+        maxAge:1000
+    }).send("dele")
 })
 let port=process.env.port
 app.listen(port,()=>{
