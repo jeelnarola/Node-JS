@@ -9,6 +9,6 @@ movie.delete("/movie/delete/:id",movieD)
 movie.patch("/movie/update/:id",movieP)
 movie.patch("/movie/rating/:id",movieR)
 movie.get("/movie/filter",movief)
-movie.get("/movie/comment/:id",comments)
+movie.patch("/movie/comment/:id",comments)
 
 module.exports=movie
