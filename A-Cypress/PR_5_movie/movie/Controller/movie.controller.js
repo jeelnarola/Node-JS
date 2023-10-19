@@ -52,4 +52,17 @@ const movief=async(req,res)=>{
     let data=await movieschema.find(obj)
     res.send(data)
 }
-module.exports={moviec,movieD,movieR,movieP,movief}
+
+const comments=async(req,res)=>{
+    let {id}=req.params
+    if(!id){
+        res.send({error: "movie not found"})
+    }else{
+        let comments=await movieschema.findByIdAndUpdate(id,req.body)
+        comments=await movieschema.findById(id)
+        res.send(comments)
+    }
+
+}
+
+module.exports={moviec,movieD,movieR,movieP,movief,comments}

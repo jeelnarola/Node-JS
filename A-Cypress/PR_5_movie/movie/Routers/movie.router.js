@@ -1,6 +1,6 @@
 const {Router}=require("express")
 
-const {moviec, movieD, movieP, movieR, movief} = require("../Controller/movie.controller")
+const {moviec, movieD, movieP, movieR, movief, comments} = require("../Controller/movie.controller")
 
 const movie=Router()
 
@@ -9,5 +9,6 @@ movie.delete("/movie/delete/:id",movieD)
 movie.patch("/movie/update/:id",movieP)
 movie.patch("/movie/rating/:id",movieR)
 movie.get("/movie/filter",movief)
+movie.get("/movie/comment/:id",comments)
 
 module.exports=movie
