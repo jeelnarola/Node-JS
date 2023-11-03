@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <header>
+    <div class="container">
+        <div class="row justify-content align-items">
+            <div class="logo">
+                <h1>jeel</h1> 
+            </div>
+            <nav>
+                <ul class="row">
+                    <li><a href="">home</a></li>
+                    <li><a href="">home</a></li>
+                    <li><a href="">home</a></li>
+                    <li><a href="">home</a></li>
+                </ul>
+            </nav>
+            <div class="btnh">
+                <a href="Signup"><button>Signup</button></a>
+                <a href="login"><button>Login</button></a>
+            </div>
+        </div>
+    </div>
+</header>
+    <aside id="login">
+        <i class="fa-solid fa-xmark" id="close"></i>
+        <h1>login to music app</h1>
+        <a href="/auth/google/">
+          <div class="google">
+            <img src="Img/google.png" alt="">
+            <p>Login with google</p>
+          </div>
+        </a>
+        <div class="line"></div>
+        <form action="/login" id="loginform" method="post">
+          <label for="">your emali <span>*</span></label><br>
+          <input type="email" placeholder="Your Email" name="email"><br>
+          <label for="">password <span>*</span></label><br>
+          <input type="password" placeholder="password" id="login-password" name="password">
+          <div id="checkbox">
+            <input type="checkbox" class="checkbox" id="checkbox"><samp>show password</samp>
+            <a href="" id="for">forget password !</a>
+          </div>
+          <div class="button">
+            <button class="btnlogin"> login -></button>
+            <button class="btnsign">Create Account</button>
+          </div>
+        </form>
+      </aside>
+      <script src="./index.js"></script>
+</body>
+</html>

@@ -7,7 +7,7 @@ const app=express()
 app.use(express.json())
 
 const transport=nodemailer.createTransport({
-    service:"email",
+    service:"gmail",
     auth:{
         user:"narolajeel29@gmail.com",
         pass:"uchvuocxlgwurcia"
@@ -16,21 +16,21 @@ const transport=nodemailer.createTransport({
 app.post("/",(req,res)=>{
     const mail={
         from:"narolajeel29@gmail.com",
-        to:"daksh1or2@gmail.com",
-        subject:"nodemailer msg",
-        text:"successfully"
+        to:"krishnanarola83@gmail.com",
+        subject:"nodemailer",
+        text:req.body.text
     }
     transport.sendMail(mail,(err,info)=>{
-        if (err) {
-            console.log(err);
+        if(err){
+            res.send(err)
         }
         else{
-            console.log(info)
+            res.send(info)
         }
     })
     res.send("done")
 })
 
-app.listen(8090,()=>{
+app.listen(809,()=>{
     console.log("server start");
 })

@@ -1,0 +1,323 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    outline: none;
+    }
+    .container{
+    max-width: 1140px;
+    margin: auto;
+    }
+    .row{
+    display: flex;
+    flex-wrap: wrap;
+    }
+    .justify-content{
+        justify-content: space-between;
+    }
+    .align-items{
+        align-items: center;
+    }
+    ul,ol{
+    list-style: none;
+    }
+    li{
+    text-decoration: none;
+    }
+    a{
+    text-decoration: none;
+    }
+    .justify-center{
+        justify-content: center;
+    }
+
+aside{
+    width: 200px;
+    box-shadow: 0px 0px 20px black;
+}
+#login,#signup,#logi{
+    float: right;
+    width: 400px;
+    /* height: 600px; */
+    margin: auto; 
+    background-color: white;
+    padding: 40px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    border-radius: 10px;
+}
+#a{
+    display: none;
+}
+#signup .fa-xmark {
+    cursor: pointer;
+    color: black;
+    font-size: 20px;
+}
+
+#login .add , #logi .add{
+    display: block;
+    right: 10px;
+    transition: all 0.5s;
+}
+
+#login .google ,#signup .google , #logi .google{
+    width: 300px;
+    /* height: 40px; */
+    border: 1px solid black;
+    margin: auto;
+    text-align: center;
+    /* line-height: 35px; */
+    text-transform: capitalize;
+    position: relative;
+    margin-top: 20px;
+    transition: all 0.3s;
+    margin: 0px;
+}
+#login .google:hover , #signup .google:hover , #logi .google:hover{
+    cursor: pointer;
+    background-color: rgba(194, 194, 193, 0.308);
+}
+#login .google img , #signup .google img , #logi .google img{
+    position: absolute;
+    content: "";
+    width: 30px;
+    top: 4px;
+    left: 45px;
+}
+a{
+    text-decoration: none;
+}
+#login .google p , #signup .google p , #logi .google p{
+    color: black;
+    font-weight: 500;
+    margin: 10px;
+    text-decoration: none;
+}
+
+.line,.linehr{
+    width: 300px;
+    height: 1px;
+    margin: auto;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    background-color: black;
+    position: relative;
+}
+.line::before,.linehr::before{
+    position: absolute;
+    content: "OR";
+    color: black;
+    width: 35px;
+    height: 35px;
+    line-height: 40px;
+    text-align: center;
+    background-color: rgb(255, 255, 255);
+    top: -8px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    margin: auto;
+}
+#loginform,#loginaside{
+    color: rgb(138, 137, 137);
+    padding: 10px;
+    text-transform: capitalize;
+}
+#loginform span , #loginaside span{
+    color: red;
+}
+#loginform input, #loginaside input{
+    width: 80%;
+    padding: 10px 20px;
+    margin: 10px;
+}
+
+#checkbox{
+    position: relative;
+    display: flex;
+    flex-wrap: nowrap;
+}
+#checkbox input{
+    display: inline-block;
+    margin: 0px;
+    width: 15px;
+    margin-left: 9px;
+    margin-right: 7px;
+   
+}
+#checkbox samp{
+    color: rgba(0, 0, 0, 0.735);
+}
+#checkbox a{
+    position: absolute;
+    right: 0;
+    color: black;
+}#loginform .button {
+    
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: auto;
+}
+#loginform .button button{
+    width: 50%;
+    padding: 10px 0px;
+    margin: 0px 10px;
+    margin-top: 40px;
+}
+#loginform .button .btnlogin{
+    margin-left:10px;
+    background-color: #27AE60;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    text-transform: capitalize;
+    font-size: 16px;
+    transition: all 0.2s ease;
+
+}
+#loginform .button .btnlogin:hover{
+    cursor: pointer;
+    background-color: #1e8449;
+}
+#loginform .button .btnsign{
+    background-color: #2F80ED;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    text-transform: capitalize;
+    font-size: 16px;
+    transition: all 0.2s ease;
+}
+#loginform .button .btnsign:hover{
+    background-color: #1366d6;
+    cursor: pointer;
+}
+
+#signup h1, #login h1{
+    text-align: center;
+    padding-bottom: 30px;
+    text-transform: capitalize;
+    color: black;
+}
+#signup #signupform input{
+    width: 85%;
+    padding: 10px 20px;
+    margin: 10px;
+    border: 1px solid black;
+    border-radius: 10px;
+
+}
+#signup #signupform input:hover{
+    cursor: pointer;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+#signup #signupbtn{
+    display: block;
+    margin: auto;
+    margin-top: 20px;
+    padding: 13px 100px;
+    font-size: 15px;
+    border-radius: 10px;
+    border: none;
+    text-transform: uppercase;
+    background-color: #2F80ED;
+    color: white;
+    transition: all 0.3s;
+}
+#signup #signupbtn:hover{
+    cursor: pointer;
+    border: 1px solid black;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    background-color: #1366d6;
+}
+#signup #signupform p{
+    color: black;
+    text-align: center;
+    font-size: 14px;
+    margin: 5px 0px;
+}
+#signup #signupform p a{
+    color: #24a0ed;
+    font-weight: 900;
+    text-transform: capitalize;
+}
+
+#login h1{
+    text-align: center;
+}
+
+nav ul li{
+    padding: 0px 10px;
+}
+header{
+    padding: 10px;
+}
+
+.btnh button{
+    padding: 5px 20px;
+    margin: 0px 5px;
+    border-radius: 10px;
+    border: 1px solid black;
+    cursor: pointer;
+}
+
+#forget,#pass{
+    text-align: center;
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    text-transform: capitalize;
+    background-color: #25262576;
+}
+.f-d,.p-d{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    margin: auto;
+    width: 300px;
+    height: 300px;
+    background-color: white;
+}
+#forget,#pass {
+    display: none;
+}
+#f-f input {
+    margin: 20px 0px;
+    border: 1px solid black;
+}
+#pass-f input{
+    margin: 20px 0px;
+    border: 1px solid black;
+}
+#f-f{
+    /* padding: 20px; */
+position: relative;
+}
+#f-e ,#p-e{
+    padding: 8px 20px;
+    border-radius: 10px;
+}
+.f-d ,.p-d{
+    padding: 20px 0px;
+    border-radius: 10px;
+}
+#f-b,#p-b{
+    position: absolute;
+    right: 30px;
+    padding: 8px 20px;
+    border-radius: 10px 0px 0px 10px;
+
+}
+.div{
+    display: flex;
+    padding: 0px 10px;
+}
+#signup #signupform .div input{
+    width: 10px;
+    height: 10px;
+}
