@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="blog"></div>
+</body>
+<script>
+    let data=JSON.parse(localStorage.getItem("blogdata"))
+
+    const UI=()=>{
+        console.log(data);
+        let image=document.createElement("img")
+        image.src='https://www.ascian.in/creatives/wp-content/uploads/blog.jpg'
+        image.setAttribute("id","img")
+
+        let title=document.createElement("h1")
+        title.innerHTML='updated blog title by the tester'
+        title.setAttribute("id","title")
+
+        let category=document.createElement("span")
+        category.innerHTML=data.category
+        category.setAttribute("id","category")
+
+        let content=document.createElement("p")
+        content.innerHTML=data.content
+        content.setAttribute("id","content")
+
+        let like=document.createElement("p")
+        like.setAttribute("id","count")
+
+        let btn=document.createElement("button")
+        btn.setAttribute("id","like")
+        
+        let input=document.createElement("input")
+        input.setAttribute("id","comment")
+
+
+        let author=document.createElement("span")
+        author.innerHTML=data.author
+
+        document.getElementById("blog").append(image,title,category,author,content,like,btn,input)
+    }
+    UI()
+</script>
+
+</html>

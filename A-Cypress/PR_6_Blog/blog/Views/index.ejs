@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
     <link rel="stylesheet" href="./style.css">
+    <style>
+        .visible{
+            display: none;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -17,17 +22,27 @@
                     <ul class="row">
                         <li><a href="">home</a></li>
                         <li><a href="">Blog</a></li>
-                        <li><a href="">Blog Post</a></li>
+                        <li id="post"><a href="">Blog Post</a></li>
                         <li><a href="">home</a></li>
                     </ul>
                 </nav>
                 <div class="btnh">
-                    <a href="Signup" id="Signup"><button>Signup</button></a>
-                    <a href="login" id="Login"><button>Login</button></a>
+                    <a href="/user/signup" id="Signup"><button>Signup</button></a>
+                    <a href="/user/login" id="Login"><button>Login</button></a>
                 </div>
             </div>
         </div>
     </header>
-    <script src="./index.js"></script>
+    <script>
+
+           const myCookieValue = document.cookie.split(";")
+         if(myCookieValue.includes("role=user")){
+            let data=document.getElementById("post")
+            console.log(data);
+            data.classList.add("visible")
+         }else{
+            document.getElementById("post").classList.remove("visible")
+         }
+    </script>
 </body>
 </html>

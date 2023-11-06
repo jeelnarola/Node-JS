@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <section>
+        <div class="container">
+            <div class="row">
+                <div id="parent-box">
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+<script>
+    const disply=(data)=>{
+        data.map((ele)=>{
+            let image=document.createElement("img")
+            image.src=ele.img
+            image.setAttribute("class","img")
+
+            let title=document.createElement("p")
+            title.innerHTML=ele.title
+            title.setAttribute("class","title")
+
+            let content=document.createElement("h5")
+            content.innerHTML=ele.content
+
+            let category=document.createElement("span")
+            category.innerHTML=ele.category
+
+            let del=document.createElement("button")
+            del.innerHTML='delete'
+            del.addEventListener("click",(e)=>{
+                // e.preventDefault()
+                
+                blogDE(ele._id)
+            })
+
+            
+            let div=document.createElement('div')
+            div.setAttribute("class","list")
+            
+            image.addEventListener("click",(e)=>{
+                e.preventDefault()
+            localStorage.setItem("blogdata",JSON.stringify(ele))
+            window.location.href='http://localhost:8090/blog/singleblog'
+        })
+        let up=document.createElement("button")
+        up.innerHTML='update'
+        up.addEventListener("click",(e)=>{
+            console.log(ele.title);
+            // document.getElementById("title").innerText=ele.title
+            // window.location.href="http://localhost:8090/blog/create"
+        })
+
+            div.append(image,title,content,category,del,up)
+
+            document.querySelector("#parent-box").append(div)
+        })
+    }
+
+    const blogDE=(id)=>{
+
+        fetch(`http://localhost:8090/blog/delete/${id}`,{
+            method:"DELETE"
+        })
+        .then((res)=>{
+        window.location.reload()
+        })
+        
+    }
+
+    fetch("http://localhost:8090/blog/blogs")
+    .then((res)=>res.json())
+    .then((data)=>{
+        disply(data)
+    })
+</script>
+</html>
