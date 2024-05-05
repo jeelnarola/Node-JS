@@ -54,6 +54,7 @@
         up.innerHTML='update'
         up.addEventListener("click",(e)=>{
             console.log(ele.title);
+            window.location.href=`http://localhost:8090/blog/edit/${ele._id}`
             // document.getElementById("title").innerText=ele.title
             // window.location.href="http://localhost:8090/blog/create"
         })

@@ -31,15 +31,14 @@
     <aside id="signup">
         <div >
           <i class="fa-solid fa-xmark close"></i>
-          <h1>signup</h1>
+          <!-- <h1>signup</h1> -->
           <form action="/user/signup" id="form" method="post">
             <input type="text" placeholder="username" id="username" name="username"><br>
             <input type="text" placeholder="Email" id="email" name="email"><br>
             <input type="text" placeholder="password" id="password" name="password"><br>
-            <select class="div" id="role" default="user">
-              <option type="radio"  value="user"><p>USER</p></option>
-              <option type="radio" value="admin"><p>ADMIN</p></option>
-              
+            <select class="div" id="role" name="role">
+              <!-- <option type="radio" name="role" value="user"><p>USER</p></option>
+              <option type="radio" name="role" value="admin"><p>ADMIN</p></option> -->
             </select>
             <button type="submit" id="signupbtn">signup</button>
             <p>already have an account? <a href="login" class="loginsi">login in</a></p>

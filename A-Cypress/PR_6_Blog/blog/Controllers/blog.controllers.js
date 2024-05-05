@@ -10,10 +10,9 @@ const blog=async(req,res)=>{
         title :req.body.title,
         content :req.body.content,
         category :req.body.category,
-        Image :req.body.image,
+        image :req.body.image,
         author:author
     }
-    console.log(obj)
     let data=await blogmodel.create(obj)
     res.cookie("blogId",data.id).send(`blog created by ${author}`)
 }
@@ -29,9 +28,8 @@ const allBlogUI=(req,res)=>{
 
 const singleblog=async(req,res)=>{
     let {blogid}=req.cookies
-    let data=await blogmodel.findById(blogid)
-    console.log(blogid);
-    res.render('singleblog',{data})
+    let singleBlog=await blogmodel.findById(blogid)
+    res.render('singleblog',{singleBlog})
 }
 
 const dele=async(req,res)=>{
@@ -39,15 +37,6 @@ const dele=async(req,res)=>{
     let data=await blogmodel.findByIdAndDelete(id)
     res.send(data)
 }
-// const img=multer.diskStorage({
-//     destination:"Images",
-//     filename:(req,file,cb)=>{
-//         cb(null,file.originalname)
-//     }
-// })
 
-// const upload=multer({
-//     storage:img
-// }).single("image")
 
 module.exports={blogget,blog,blogUi,allBlogUI,singleblog,dele}
